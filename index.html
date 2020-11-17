@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>animation</title>
+
+    <style media="screen">
+    body{
+      height: 3000px;
+    }
+
+      .one {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        animation-name: one;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        margin: 500px;
+      }
+
+      @keyframes one {
+        0%   {background-color: red;}
+        25%  {background-color: yellow;}
+        50%  {background-color: blue;}
+        100% {background-color: green;}
+      }
+
+      .two {
+        width: 200px;
+        height: 200px;
+        border-radius: 200px;
+        background-color: black;
+        border: 20px solid red;
+        margin-bottom: 400px; margin-left: 200px;
+        position: relative;
+        animation: mymove 5s infinite;
+        animation-timing-function: linear;
+      }
+
+
+      @keyframes mymove {
+          from {left: 200px;}
+          to {left: 600px;}
+        }
+
+      .three{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 20%;
+        position:relative;
+        animation-name: move;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+      }
+      @keyframes move {
+        from {bottom: 0px;}
+        to {bottom: 1000px; background-color: blue;}
+      }
+
+      .four {
+        width: 500px;
+        height: 300px;
+        border-radius: 50%;
+        margin-left: 300px;
+        margin-bottom: 500px;
+        position: relative;
+        background-color: #0094;
+        animation-name: circle;
+        animation-duration: 8s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+            }
+      @keyframes circle {
+          0%   {background-color:#0094; left:0px; top:0px;}
+          25%  {background-color:yellow; left:500px; top:0px;}
+          50%  {background-color:blue; left:500px; top:500px;}
+          75%  {background-color:green; left:0px; top:500px;}
+          100% {background-color:red; left:0px; top:0px;}
+        }
+
+      .five {
+        width: 100px;
+        height: 100px;
+        border-radius: 20%;
+        margin-left: 100px;
+        margin-bottom: 100px;
+        position: relative;
+        background-color: #0987;
+        animation-name: baf;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+      }
+      @keyframes baf {
+        0%{left: 0px;background-color: #0987}
+        50%{left:600px; background-color: #0067}
+        100%{left:0px;background-color: #0987}
+      }
+
+      .six {
+      	width: 120px;
+      	height: 120px;
+      	background-color: violet;
+      	margin: 50px;
+      	animation-name: turning;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+      .six:hover {
+      	animation-play-state: paused;
+      }
+
+      @keyframes turning {
+        0% {
+          border-radius: 0 0 0 0;
+          transform: rotate(0deg);
+        }
+        25% {
+          border-radius: 50% 0 0 0;
+          transform: rotate(45deg);
+        }
+        50% {
+          border-radius: 50% 50% 0 0;
+          transform: rotate(90deg);
+        }
+        75% {
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(135deg);
+        }
+        100% {
+          border-radius: 50% 50% 50% 50%;
+          transform: rotate(180deg);
+        }
+      }
+
+      .seven {
+        background: pink;
+        width: 50px;
+        height: 50px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 300px);
+        animation: bump 4s infinite ease;
+}
+
+      @keyframes bump {
+        0%, 15% {
+          opacity: 0;
+        }
+        15%, 25% {
+          transform: none;
+          animation-timing-function: cubic-bezier(1,-1.92,.95,.89);
+          width: 50px;
+          height: 50px;
+          top: calc(50% - 25px);
+          left: calc(50% - 25px);
+          opacity: 1;
+        }
+        35%, 45% {
+          transform: translateX(100px);
+          height: 70px;
+          width: 25px;
+          top: calc(50% - 30px);
+          animation-timing-function: linear;
+          opacity: 1;
+        }
+        70%, 100% {
+          transform: translateX(80px) translateY(50px);
+          height: 70px;
+          width: 25px;
+          top: calc(50% - 30px);
+          opacity: 0;
+        }
+      }
+
+      .eight {
+        background: pink;
+        width: 50px;
+        height: 50px;
+        /* position: absolute; */
+        margin-top:  20px;
+        margin-left: 600px;
+        animation: slide 3s infinite cubic-bezier(.64,-0.36,.1,1);
+        position: relative;
+
+      }
+      .eight eight2 {
+        animation: slide2 3s infinite cubic-bezier(.64,-0.36,.1,2);
+        position: absolute;
+        margin-top:  20px;
+        margin-left: 600px;
+      }
+
+      @keyframes slide {
+        0%, 15% {
+          opacity: 0;
+          transform: translateX(-18em);
+        }
+        15%, 25% {
+          transform: translateX(-18em);
+          opacity: 1;
+        }
+        50%, 60% {
+          transform: skewX(20deg);
+
+        85%, 90% {
+          transform: translateX(18em);
+          opacity: 1;
+        }
+        100% {
+          transform:   translateX(18em);
+          opacity: 0;
+        }
+      }
+      @keyframes slide2 {
+              0%, 35% {
+           transform: none;
+         }
+         50%, 60% {
+           transform: skewX(20deg);
+         }
+         90%, 100% {
+           transform: none;
+         }
+      }
+
+      .nine {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin-top:  10px;
+        margin-left: 100px;
+        position: relative;
+        animation: rotate 4s infinite cubic-bezier(.93,0,.67,1.21);
+        /* transform-origin: 100% 100px; */
+      }
+
+      @keyframes rotate {
+        0%, 10% {
+          transform: translateX(0);
+        }
+        40%, 60% {
+          transform: rotateZ(90deg);
+        }
+        90%, 100% {
+          transform: translateX(0);
+        }
+      }
+
+      ten.style {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        animation-duration: 6s;
+        animation-iteration-count: infinite;
+        margin: 100px;
+      }
+
+      .sevena .shape-container {
+  animation: move-right 6s infinite cubic-bezier(.37,.55,.49,.67);
+  position: absolute;
+  left: calc(50% - 4em);
+  top: calc(50% - 4em);
+}
+.sevena .shape {
+  animation: bounce 6s infinite linear;
+  border-radius: 50%;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+
+@keyframes move-right {
+  0% {
+    transform: translateX(-20em);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: translateX(20em);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-8em);
+    animation-timing-function: cubic-bezier(.51,.01,.79,.02);
+  }
+  15% {
+    transform: translateY(8em);
+    animation-timing-function: cubic-bezier(.19,1,.7,1);
+  }
+  25% {
+    transform: translateY(-4em);
+    animation-timing-function: cubic-bezier(.51,.01,.79,.02);
+  }
+  32.5% {
+    transform: translateY(8em);
+    animation-timing-function: cubic-bezier(.19,1,.7,1);
+  }
+  40% {
+    transform: translateY(0em);
+    animation-timing-function: cubic-bezier(.51,.01,.79,.02);
+  }
+  45% {
+    transform: translateY(8em);
+    animation-timing-function: cubic-bezier(.19,1,.7,1);
+  }
+  50% {
+    transform: translateY(3em);
+    animation-timing-function: cubic-bezier(.51,.01,.79,.02);
+  }
+  56% {
+    transform: translateY(8em);
+    animation-timing-function: cubic-bezier(.19,1,.7,1);
+  }
+  60% {
+    transform: translateY(6em);
+    animation-timing-function: cubic-bezier(.51,.01,.79,.02);
+  }
+  64% {
+    transform: translateY(8em);
+    animation-timing-function: cubic-bezier(.19,1,.7,1);
+  }
+  66% {
+    transform: translateY(7.5em);
+    animation-timing-function: cubic-bezier(.51,.01,.79,.02);
+  }
+  70%, 100% {
+    transform: translateY(8em);
+    animation-timing-function: cubic-bezier(.19,1,.7,1);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.principle {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.shape {
+  background: #2d97db;
+  border: 1em solid #fff;
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  top: calc(50% - 2em);
+  left: calc(50% - 2em);
+}
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="one">
+    </div>
+
+    <div class="two">
+    </div>
+
+    <div class="three">
+    </div>
+
+    <div class="four">
+    </div>
+
+    <div class="five">
+    </div>
+
+    <div class="six">
+    </div>
+
+    <div class="seven">
+    </div>
+
+    <div class="nine">
+    </div>
+
+    <div class="ten">
+
+    </div>
+
+    <div class="eight">
+      <!-- <div class="eight2"> -->
+      </div>
+    </div>
+<article class="principle sevena">
+    <div class="shape-container">
+      <div class="shape a"></div>
+    </div>
+  
+</article>
+
+  </body>
+</html>
